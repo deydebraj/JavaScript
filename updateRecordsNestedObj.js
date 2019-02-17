@@ -2,16 +2,16 @@
 var myMusic= 
     {
         "15":{
-        "artist":"john",        //Replacing artist name
+        "artist":"john",        //Question 1: Replacing artist name
         "album":"blue sky",
-        "formats":["cd","dvd","sd"],
+        "formats":["cd","dvd"],
         "nomines": "grammy"
     },
     
         "54": {
         "artist":"dave",
-        "album":"hello beautiful",
-        "formats":["cd","dvd","sd"],
+        "album":"hello beautiful",  //Question 2: Change the album name
+        "formats":["cd","dvd"],  //Question 3: add netflix here
         "nomines": "grammy"
     }
 };
@@ -24,9 +24,15 @@ function updateRecords(id,prop,value){
     if(value===""){
         delete myMusic[id][prop];   
     } 
+    else if(prop==="formats"){
+        myMusic[id][prop]=myMusic[id][prop] || [];
+        myMusic[id][prop].push(value); 
+    }
     else{
         myMusic[id][prop] = value;
     }
     return myMusic;
 }
- console.log(updateRecords(15,"artist","ABBA"));
+updateRecords("54","album","I am the new album");
+updateRecords("54","formats","Netflix");
+console.log(updateRecords(15,"artist","ABBA"));
