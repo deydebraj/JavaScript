@@ -24,10 +24,6 @@ function updateRecords(id,prop,value){
     if(value===""){
         delete myMusic[id][prop];   
     } 
-    else if(prop==="album"){
-        myMusic[id][prop]=myMusic[id][prop] || [];
-        myMusic[id][prop].push(value); 
-    }
     else{
         myMusic[id][prop] = value;
     }
