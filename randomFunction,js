@@ -1,0 +1,5 @@
+//geneate a random number in javaScript
+function randomFunction(){
+    return Math.random();
+}
+console.log(randomFunction());
