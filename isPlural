@@ -1,0 +1,9 @@
+function isPlural(word) {
+	var temp = 0;
+	temp = word.length - 1;
+	if("s" == word[temp])
+		return true;
+	else
+		return false;
+}
+console.log(isPlural("bitches"));
